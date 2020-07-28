@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+:root {
+    --bg: #ddd;
+    --theme: #3498db;
+    --theme-opaque: #3498db9a;
+}
+
+* {
+    font-family: "Sora", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ******************* Hero Section ******************* */
+
+.hero {
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+    color: #fff;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links ul {
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.links li {
+    list-style-type: none;
+    padding: 0 10px;
+}
+
+.links a {
+    color: #fff;
+    transition: color .2s ease-in;
+}
+
+.links a.purple:hover {
+    color: #B53471;
+}
+.links a.blue:hover {
+    color: #3498db;
+}
+.links a.red:hover {
+    color: #e74c3c;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+    margin-bottom: 40px;
+}
+
+.greeting img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.greeting h1 {
+    color: var(--theme);
+}
+
+
+/* ******************* Portfolio Section ******************* */
+
+.portfolio {
+    background-color: var(--bg);
+    position: absolute;
+    left: 40%;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.portfolio-content {
+    margin: 60px;
+}
+
+.port-intro h1{
+    font-size: 2em;
+    color: #3498db;
+}
+
+.projects {
+    margin-bottom: 200px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.project-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #fff;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    transition: all 0.2s ease-in;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease-in;
+}
+
+.project-tile h3 {
+    transform: translateY(-25px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-tile:hover h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-tile:hover{
+    background-size: 110%;
+}
+
+.project-tile:hover .overlay {
+    background-color: var(--theme-opaque);
+}
+
+.footer {
+    position: absolute;
+    margin-top: 100px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #aaa;
+}
+
+.footer a {
+    margin: 0 auto;
+    color: var(--theme);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    font-weight: bold;
+}
+
+.footer h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* ******************* Project Classes ******************* */
+
+.moto {
+    color: #fff;
+    background: #fff url("./img/moto.jpeg") no-repeat center/100%;
+}
+
+
+/* ******************* Media Query ******************* */
+
+/* ******************* Largest *******************  */
+@media(max-width: 3500px) {
+    .projects {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+/* ******************* Large *******************  */
+@media(max-width: 1750px) {
+    .projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+/* ******************* Small *******************  */
+@media(max-width: 1250px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .greeting img {
+        display: none;
+    }
+}
+
+
+/* ******************* Smallest *******************  */
+@media(max-width: 950px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .hero {
+        position: static;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .portfolio {
+        position: static;
+        width: 100%;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        position: static;
+    }
+
+    .greeting img {
+        display: inline;
+    }
+}
+
+@media(max-width: 570px) {
+    .greeting img {
+        display: none;
+    }
+}
