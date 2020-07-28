@@ -194,6 +194,14 @@ body {
     background: #fff url("./img/moto.jpeg") no-repeat center/100%;
 }
 
+.palette {
+    background: #3a3a3a url("./img/palette.png") no-repeat center/100%;
+}
+.palette a {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 /* ******************* Media Query ******************* */
 
