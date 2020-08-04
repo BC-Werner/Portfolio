@@ -33,10 +33,26 @@ body {
     width: 40%;
     height: 100vh;
     color: #fff;
-    background: #111 url("./img/stock-vr.jpeg") no-repeat center;
+    background: #000 url("./img/stock-vr.jpeg") no-repeat center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    background: radial-gradient(circle, transparent 20%, black 80%);
+    z-index: 1;
+}
+
+.links {
+    z-index: 3;
 }
 
 .links ul {
@@ -72,6 +88,7 @@ body {
     flex-direction: column;
     margin: 10px 50px;
     margin-bottom: 40px;
+    z-index: 3;
 }
 
 .greeting img {
@@ -243,6 +260,10 @@ body {
         width: 100%;
         height: 90vh;
     }
+    .hero::after {
+        width: 100%;
+        height: 90vh;
+    }
 
     .portfolio {
         position: static;
@@ -264,6 +285,9 @@ body {
 
 @media(max-width: 950px) and (min-height: 1024px) {
     .hero {
+        height: 50vh;
+    }
+    .hero::after {
         height: 50vh;
     }
 }
