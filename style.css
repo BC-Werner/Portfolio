@@ -33,7 +33,8 @@ body {
     width: 40%;
     height: 100vh;
     color: #fff;
-    background: #000 url("./img/stock-vr.jpeg") no-repeat center;
+    background: #000 url("./img/hero_image.jpg") no-repeat center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -66,6 +67,7 @@ body {
 .links li {
     list-style-type: none;
     padding: 0 10px;
+    width: 50px;
 }
 
 .links a {
@@ -73,14 +75,19 @@ body {
     transition: color .2s ease-in;
 }
 
-.links a.purple:hover {
-    color: #B53471;
-}
 .links a.blue:hover {
     color: #3498db;
+    font-size: 1.1rem;
 }
-.links a.red:hover {
-    color: #e74c3c;
+
+.title-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
 }
 
 .greeting {
@@ -96,7 +103,7 @@ body {
     border-radius: 50%;
 }
 
-.greeting h1 {
+.greeting > .text h1 {
     color: var(--theme);
 }
 
